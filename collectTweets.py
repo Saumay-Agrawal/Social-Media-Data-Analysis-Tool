@@ -22,13 +22,13 @@ for tweet in delhi_cursor.items(limit=10000):
     print("processed tweet #", delhi_count)
     delhi_count+=1
 
-mumbai_collection = db["Mumbai"]
-mumbai_cursor = tweepy.Cursor(api.search,q="#MumbaiRains OR #CycloneOckhi",count=100)
-mumbai_count = 1
-for tweet in mumbai_cursor.items(limit=10000):
-    mumbai_collection.insert(tweet._json)
-    print("processed tweet #", mumbai_count)
-    mumbai_count+=1
+# mumbai_collection = db["Mumbai"]
+# mumbai_cursor = tweepy.Cursor(api.search,q="#MumbaiRains OR #CycloneOckhi",count=100)
+# mumbai_count = 1
+# for tweet in mumbai_cursor.items(limit=10000):
+#     mumbai_collection.insert(tweet._json)
+#     print("processed tweet #", mumbai_count)
+#     mumbai_count+=1
 
-print('Tweets from mumbai: ', mumbai_count)
+# print('Tweets from mumbai: ', mumbai_count)
 print('Tweets from delhi: ', delhi_count)
