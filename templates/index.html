@@ -1,28 +1,33 @@
-{% extends "bootstrap/base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-6">
-                <h1>WebApp</h1>
-            </div>
-            <div class="col-md-6">
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <h3><a href="#">About</a></h3>
-                    </li>
-                    <li class="list-inline-item">
-                        <h3><a href="#">Contact</a></h3>
-                    </li>
-                    <li class="list-inline-item">
-                        <h3><a href="#">Page 3</a></h3>
-                    </li>
-                </ul>
-            </div>
+    <form class="form-signin">
+        <div class="text-center mb-4">
+            <i class="fa fa-twitter fa-5x" aria-hidden="true"></i>
+            <h1 class="h3 mb-3 font-weight-normal">Twitter Data Analytics</h1>
+            <p>This website gives an exploratory data analysis on Tweets. The tweets are first stored locally in MongoDB
+                collections and then processed to give formatted data and visualisations.</p>
         </div>
 
-    </div>
+        <div class="form-label-group">
+            <input type="text" id="inputColName" class="form-control" placeholder="Collection name"
+                   required autofocus>
+            <label for="inputColName">Collection Name</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="inputHashtag" class="form-control" placeholder="Hashtag" required>
+            <label for="inputHashtag">Hashtag</label>
+        </div>
+
+{#        <div class="checkbox mb-3">#}
+{#            <label>#}
+{#                <input type="checkbox" value="remember-me"> Remember me#}
+{#            </label>#}
+{#        </div>#}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        <p class="mt-5 mb-3 text-muted text-center">&copy; Saumay | Rishabh</p>
+    </form>
 
 {% endblock %}
