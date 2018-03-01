@@ -4,7 +4,7 @@ from pprint import pprint
 from pymongo import MongoClient
 
 app = Flask(__name__)
-bootstrap = Bootstrap(app)
+bootstrap = Bootstrap(app)
 
 
 @app.route('/')
@@ -28,6 +28,17 @@ def geodata():
     for tweet in delhi_tweets:
         data.append(tweet['geo'])
     return render_template('geodata.html', data=data)
+
+@app.route('/coordinates')
+def coordinates():
+    client = MongoClient()
+    db = client["Tweets"]
+    delhi_collection = db["Delhi"]
+    delhi_tweets = delhi_collection.find()
+    data = []
+    for tweet in delhi_tweets:
+        data.append(tweet['coordinates'])
+    return render_template('coordinates.html', data=data)
 
 
 # if __name__ == '__main__':
